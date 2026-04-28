@@ -35,3 +35,10 @@ console.log(5 == "5"); // true
 console.log(5 === "5"); //false
 console.log(1 == true); //true
 console.log(1 === true); //false
+
+// generate a random integer within a specific range (min to max)
+// application: Six Faced Dice
+function getRandomInteger(max, min) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(getRandomInteger(0, 7));

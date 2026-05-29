@@ -18,11 +18,18 @@ const obj = {
     pinCode: 534312,
   },
 };
-console.log(obj.details.height);
+//shallowCopy vs deepCopy
 
-const {
-  id,
-  age,
-  address: { pinCode: zipcode },
-} = obj;
-console.log(zipcode);
+//shallowCopy
+
+/* const shallowCopyOfObj = Object.assign({}, obj);
+shallowCopyOfObj.address.district = "West Godavari";
+console.log(shallowCopyOfObj.address.district);
+console.log(obj.address.district); */
+
+//deepCopy
+
+const deepCopyOfObj = structuredClone(obj);
+deepCopyOfObj.address.town = "JangareddyGudem"; //cloned object shows temp change: Jangareddygudem
+console.log(deepCopyOfObj.address.town);
+console.log(obj.address.town); //but original objs keys remained same!

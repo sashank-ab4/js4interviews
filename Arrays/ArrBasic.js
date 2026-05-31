@@ -1,5 +1,17 @@
 let array = [1, 2, 3, 4, 5];
 
+//CUSTOM forEach()
+Array.prototype.myForEach = function (callback) {
+  for (i = 0; i < this.length; i++) {
+    callback(this[i]);
+  }
+};
+let arr = [10, 20, 30];
+
+arr.myForEach((item) => {
+  console.log(item);
+});
+
 let prodArray = array.map((num) => num / 2);
 //console.log(prodArray);
 
@@ -52,54 +64,3 @@ function findLongestString(arr) {
   return longest;
 }
 console.log(findLongestString(arrayOfStrings));
-
-// #REMOVE THE DUPLICATES IN AN ARRAY
-const arrayWithDupes = [9, 9, 5, 1, 7, 0, 2, 5, 6, 7];
-
-//using "Set"
-const unqNums = [...new Set(arrayWithDupes)];
-console.log(unqNums);
-
-//using "filter method"
-const unqNumerics = arrayWithDupes.filter((item, index) => {
-  return arrayWithDupes.indexOf(item) === index;
-});
-console.log(unqNumerics);
-
-//using "for loop" method
-let unqNumerals = [];
-for (let i = 0; i < arrayWithDupes.length; i++) {
-  if (!unqNumerals.includes(arrayWithDupes[i])) {
-    unqNumerals.push(arrayWithDupes[i]);
-  }
-}
-console.log(unqNumerals);
-
-// #FLATTEN AN ARRAY
-let arrayTwo = [1, 2, 3, [4, 5, [6, 7], 8], 9, 10];
-let flattenedArray = [];
-function flatTheArray(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      flatTheArray(arr[i]);
-    } else {
-      flattenedArray.push(arr[i]);
-    }
-  }
-}
-flatTheArray(arrayTwo);
-console.log(flattenedArray);
-
-//FINDING THE MISSING NUMBER IN AN ARRAY!
-
-let arrThree = [1, 2, 3, 4, 5];
-
-function findTheMissingNum(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== i + 1) {
-      return i + 1;
-    }
-  }
-  return arr.length + 1;
-}
-console.log(findTheMissingNum(arrThree));

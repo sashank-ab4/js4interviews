@@ -1,8 +1,12 @@
+// strings
 // CHECK WHETHER TWO STRINGS ARE ANAGRAMS or NOT
 // FIND FIRST NON REPEATING CHARACTER: aabbcdde
 // FIND MOST REPEATED FIRST CHARACTER & COUNT FROM a Given STRING!
 // FIND MOST REPEATED CHARACTERS & COUNT FROM a Given STRING!
 // REVERSE A STRING
+// FIND VOWELS IN A STRING
+
+// basic
 // MASK AN EMAIL ADDRESS
 // MASK A PHONE NUMBER
 
@@ -125,6 +129,29 @@ function reverseTheStr(str) {
   return reverseTheStr(str.slice(1)) + str[0];
 }
 console.log(reverseTheStr(str));
+// vowels
+function countVowels(str) {
+  let count = 0;
+  let vowels = "aeiou";
+  for (const char of str.toLowerCase()) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countVowels("Vivekananda"));
+// returning all vowels
+function findVowels(str) {
+  let vowels = [];
+  for (const char of str.toLowerCase()) {
+    if ("aeiou".includes(char)) {
+      vowels.push(char);
+    }
+  }
+  return vowels;
+}
+console.log(findVowels("Vivekananda"));
 
 // 6)
 function maskingEmail(email) {
@@ -160,3 +187,5 @@ function maskingNumber(phnNum) {
   }
 }
 console.log(maskingNumber("9951702567"));
+
+// 8)

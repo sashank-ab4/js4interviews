@@ -83,3 +83,41 @@ function findTheSum(arr) {
   return sum;
 }
 console.log(findTheSum([-1, -2, 3, -4, "5"]));
+
+// 5)
+function findTheLargest(arr) {
+  if (!Array.isArray(arr)) return false;
+  if (arr.length === 0) return null;
+
+  let max;
+  for (let i = 0; i < arr.length; i++) {
+    let value = arr[i];
+    if (typeof value !== "number" || !Number.isFinite(value)) return false;
+    if (max === undefined || value > max) {
+      max = value;
+    }
+  }
+  return max;
+}
+
+console.log(findTheLargest([-1, -2, -5, 0]));
+
+function findSecondLargest(arr) {
+  if (!Array.isArray(arr)) return false;
+  if (arr.length === 0) return null;
+
+  let largest = -Infinity;
+  let secondLargest = -Infinity;
+
+  for (const num of arr) {
+    if (typeof num !== "number" || !Number.isFinite(num)) return false;
+    if (num > largest) {
+      secondLargest = largest;
+      largest = num;
+    } else if (num > secondLargest && num !== largest) {
+      secondLargest = num;
+    }
+  }
+  return secondLargest;
+}
+console.log(findSecondLargest([-5, -9, -7, -68, -1]));

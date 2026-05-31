@@ -110,19 +110,6 @@ const handleData = async () => {
 };
 handleData();
 
-const numbers = [12, 24, 36, 48, 60];
-// finding the SUM of an Array using .reduce()
-
-const totNum = numbers.reduce((acc, curr) => acc + curr, 0);
-console.log(totNum);
-
-// normal way using the loops!
-let anotherWayToFindTotal = 0;
-for (let i = 0; i < numbers.length; i++) {
-  anotherWayToFindTotal += numbers[i];
-}
-console.log(anotherWayToFindTotal);
-
 //finding the middle element of the array
 
 function middleElement(numbers) {

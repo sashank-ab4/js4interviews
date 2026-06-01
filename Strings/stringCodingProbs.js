@@ -5,7 +5,8 @@
 // FIND MOST REPEATED CHARACTERS & COUNT FROM a Given STRING!
 // REVERSE A STRING
 // FIND VOWELS IN A STRING
-// CHECK WHETHER THE STRING IS A PALINDROME OR NOT
+// CHECK WHETHER THE STRING IS A PALINDROME OR NOT'
+// MAKE THE FIRST LETTER OF THE WORD, CAPITAL
 
 // 1)
 // anagrams: sort/split method
@@ -179,3 +180,13 @@ function checkPalindrome(str) {
   return clearedString === clearedString.split("").reverse().join("");
 }
 console.log(checkPalindrome("hannaH"));
+
+// 8)
+function makeFirstLetterCap(str) {
+  if (!str) return;
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+console.log(makeFirstLetterCap("sashank akkabattula"));

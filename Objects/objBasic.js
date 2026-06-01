@@ -33,3 +33,23 @@ const deepCopyOfObj = structuredClone(obj);
 deepCopyOfObj.address.town = "JangareddyGudem"; //cloned object shows temp change: Jangareddygudem
 console.log(deepCopyOfObj.address.town);
 console.log(obj.address.town); //but original objs keys remained same!
+
+// different types of creating Objects!
+//literal type
+let patient = {
+  name: "John",
+  age: 60,
+};
+// Object.create()
+
+let patient2 = Object.create(patient);
+patient2.age = 55;
+
+//constructor
+function Doctor() {
+  this.name = "Surya";
+  this.age = 56;
+  this.address = "rjy";
+}
+let doc = new Doctor();
+console.log(doc);

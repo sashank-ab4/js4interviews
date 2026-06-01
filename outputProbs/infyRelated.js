@@ -22,11 +22,18 @@ The function is done running, but its variables are still kept alive because ano
 console.log("one");
 setTimeout(() => {
   console.log("second");
-}, 2000);
+}, 0);
+function fooo() {
+  console.log("foo");
+}
 console.log("three");
+(function () {
+  console.log("Hello");
+})();
 Promise.resolve().then(() => {
   console.log("four");
 });
+fooo();
 console.log("five");
 // one, three, five, four and waits for 2 seconds then second
 
@@ -55,7 +62,7 @@ processInput(greet);
 
 //3 asynchronous callback
 setTimeout(() => {
-  console.log("Done!");
+  console.log("Asynchronous Callback!");
 }, 5000);
 
 // HOF in terms of retuning a function as per defintion!

@@ -38,15 +38,6 @@ function reverseTheString(str) {
 
 console.log(reverseTheString("mummy daddy"));
 
-function makeFirstLetterCap(str) {
-  if (!str) return;
-  return str
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-}
-console.log(makeFirstLetterCap("sashank akkabattula"));
-
 let arr = new Set();
 arr.add(1);
 arr.add(2);

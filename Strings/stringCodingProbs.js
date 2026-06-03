@@ -4,6 +4,7 @@
 // FIND MOST REPEATED FIRST CHARACTER & COUNT FROM a Given STRING!
 // FIND MOST REPEATED CHARACTERS & COUNT FROM a Given STRING!
 // REVERSE A STRING
+// REVERSE A WORD(SENTENCE)
 // FIND VOWELS IN A STRING
 // CHECK WHETHER THE STRING IS A PALINDROME OR NOT'
 // MAKE THE FIRST LETTER OF THE WORD, CAPITAL
@@ -123,6 +124,18 @@ function reverseString(str) {
 }
 console.log(reverseString(str));
 //using recursion method
+
+// 5.1
+function reverseTheWord(sentence) {
+  return sentence
+    .split(/(\s+)/)
+    .map((part) => {
+      return part.trim() ? part.split("").reverse().join("") : part;
+    })
+    .join("");
+}
+
+console.log(reverseTheWord("heylo  hello"));
 
 function reverseTheStr(str) {
   if (str === "") return "";

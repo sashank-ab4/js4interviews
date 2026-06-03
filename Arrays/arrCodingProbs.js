@@ -3,6 +3,8 @@
 // FLATTEN AN ARRAY
 // REMOVE THE DUPLICATES IN AN ARRAY
 // FIND THE SUM OF AN ARRAY
+// FIND NEGATIVE NUMBERS IN AN ARRAY
+// COUNT EVEN NUMBERS IN AN ARRAY
 
 // 1)
 // if the array's elements start from (1-n) numbers
@@ -121,3 +123,31 @@ function findSecondLargest(arr) {
   return secondLargest;
 }
 console.log(findSecondLargest([-5, -9, -7, -68, -1]));
+
+// 6)
+
+function countNegatives(arr) {
+  if (!Array.isArray(arr)) return false;
+
+  let count = 0;
+  for (const element of arr) {
+    if (typeof element !== "number" || !Number.isFinite(element)) return false;
+    if (element < 0) count++;
+  }
+  return count;
+}
+console.log(countNegatives([-9, -8, 9, 5, 4, 3]));
+
+// 7)
+function countEvens(arr) {
+  if (!Array.isArray(arr)) return false;
+
+  let count = 0;
+  for (const element of arr) {
+    let value = element;
+    if (value && value % 2 === 1) count++;
+  }
+  return count;
+}
+
+console.log(countEvens([-22, 98, 8, 5, 7, 3, -2]));
